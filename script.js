@@ -6,6 +6,20 @@ const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '=', '+', '?'];
 
+function randomUpper(){
+  return uppercase [Math.floor(Math.random()*uppercase.length)];
+}
+console.log(randomUpper());
+
+function randomLower(){
+  return uppercase [Math.floor(Math.random()*lowercase.length)];
+}
+function randomNum(){
+  return uppercase [Math.floor(Math.random()*numbers.length)];
+}
+function randomSpecial(){
+  return uppercase [Math.floor(Math.random()*specialCharacters.length)];
+}
 
 function generatePassword() {
 //password type prompts
@@ -34,19 +48,19 @@ var passwordLength = window.prompt('How many characters do you want in your pass
     }
 //determine password elements
 var upperLetters = window.prompt ('Do you want to include uppercase letters?(yes/no)');
-var lowerLetters = window.prompt ('Do you want to include lowercase letters?(yes/no)');
-var numerical = window.prompt ('Do you want to include numbers?(yes/no)');
-var special = window.prompt ('Do you want to include special characters?(yes/no)');
+//var lowerLetters = window.prompt ('Do you want to include lowercase letters?(yes/no)');
+//var numerical = window.prompt ('Do you want to include numbers?(yes/no)');
+//var special = window.prompt ('Do you want to include special characters?(yes/no)');
 
   if (upperLetters === "yes") {
-    return Math.floor(Math.random(uppercase)*passwordLength);
-  } else if(lowerLetters === "yes") {
-    return Math.floor(Math.random(uppercase)*passwordLength);
-  } else if(numerical === "yes") {
-    return Math.floor(Math.random(uppercase)*passwordLength);
-  } else if(special === "yes") {
-    return  Math.floor(Math.random(uppercase)*passwordLength);
-  }
+    console.log( Math.floor(Math.random(uppercase+=passwordLength)));
+  } //else if(lowerLetters === "yes") {
+    //return Math.floor(Math.random(uppercase)*passwordLength);
+  //} else if(numerical === "yes") {
+  //  return Math.floor(Math.random(uppercase)*passwordLength);
+ // } else if(special === "yes") {
+  //  return  Math.floor(Math.random(uppercase)*passwordLength);
+  //}
 
 
   //class code  
@@ -62,3 +76,4 @@ var special = window.prompt ('Do you want to include special characters?(yes/no)
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
