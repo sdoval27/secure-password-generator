@@ -6,33 +6,17 @@ const lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '=', '+', '?'];
 
-//array randomizers
-function randomUpper(){
-  return uppercase [Math.floor(Math.random()*uppercase.length)];
-}
-console.log(randomUpper());
-
-function randomLower(){
-  return uppercase [Math.floor(Math.random()*lowercase.length)];
-}
-function randomNum(){
-  return uppercase [Math.floor(Math.random()*numbers.length)];
-}
-function randomSpecial(){
-  return uppercase [Math.floor(Math.random()*specialCharacters.length)];
-}
-
 function generatePassword() {
   var passwordLength = window.prompt('How many characters do you want in your password?');
   var alphabetSoup = [];
   
  //determine password length
   if (passwordLength < 8) {
-    window.alert('Your password must be longer than 8 characters!');
-  } else if (8 <= passwordLength && passwordLength <= 128 ){
-    window.alert('Your password is '+ passwordLength + ' characters long.');
-    } else {
-    window.alert('The maximum password length is 128 characters, make it shorter!');
+    window.alert('Your password must be longer than 8 characters!')
+    return 'Think big, you can do it!';
+    } else if (128 < passwordLength) {
+    window.alert('The maximum password length is 128 characters, make it shorter!')
+    return 'Why would you want a password that long?';
     };
  console.log(passwordLength);
 
@@ -41,21 +25,50 @@ function generatePassword() {
  var numerical = window.confirm ('Do you want to include numbers?');
  var special = window.confirm ('Do you want to include special characters?');
 
+//character selectors
   if (upperLetters){
-    return alphabetSoup = randomUpper()* passwordLength;
-  }
+   var alphabetSoup = alphabetSoup.concat(uppercase);
+   console.log('yes');
+  } else {
+    console.log('no');
+  };
+
   if (lowerLetters){
-    return alphabetSoup = randomLower()* passwordLength;
+    var alphabetSoup = alphabetSoup.concat(lowercase);
+    console.log('yes');
+  } else {
+    console.log('no');
   }
+
   if (numerical){
-    return alphabetSoup = randomNum()* passwordLength;
+    var alphabetSoup = alphabetSoup.concat(numbers);
+    console.log('yes');
+  } else {
+    console.log('no');
   }
+
   if (special){
-    return alphabetSoup = specialCharacters()* passwordLength;
+    var alphabetSoup = alphabetSoup.concat(specialCharacters);
+    console.log('yes');
+  } else {
+    console.log('no');
   }
+  
+console.log(alphabetSoup);
+
   if (!upperLetters && !lowerLetters && !numerical && !special){
     return 'Well this is awkward. . . no password for you I guess.';
   }
+
+  if (8 <= passwordLength && passwordLength <= 128 ) {
+    
+    for (var i = 0; i < passwordLength; i += alphabetSoup) {
+    passActual = '';
+    var random = Math.floor(Math.random() * alphabetSoup.length);
+    passActual = passActual + alphabetSoup [random];
+    return passActual;
+    };
+  };
 
 }
 
@@ -74,4 +87,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
