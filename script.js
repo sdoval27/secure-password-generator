@@ -7,7 +7,8 @@ const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '=', '+', '?'];
 
 function generatePassword() {
-  var passwordLength = window.prompt('How many characters do you want in your password?');
+  var charLength = window.prompt('How many characters do you want in your password?');
+  var passwordLength = parseInt (charLength);
   var alphabetSoup = [];
   
  //determine password length
@@ -53,7 +54,7 @@ function generatePassword() {
   } else {
     console.log('no');
   }
-  
+
 console.log(alphabetSoup);
 
   if (!upperLetters && !lowerLetters && !numerical && !special){
@@ -62,11 +63,11 @@ console.log(alphabetSoup);
 
   if (8 <= passwordLength && passwordLength <= 128 ) {
     
-    for (var i = 0; i < passwordLength; i += alphabetSoup) {
-    passActual = '';
-    var random = Math.floor(Math.random() * alphabetSoup.length);
-    passActual = passActual + alphabetSoup [random];
-    return passActual;
+    for (var i = 0; i < alphabetSoup.length; i ++) {
+      var passActual = '';
+      alphabetSoup[i] = Math.floor(Math.random() * passwordLength);
+      passActual = alphabetSoup [i];
+      return passActual;
     };
   };
 
