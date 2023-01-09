@@ -62,13 +62,13 @@ console.log(alphabetSoup);
   }
 
   if (8 <= passwordLength && passwordLength <= 128 ) {
-    
-    for (var i = 0; i < alphabetSoup.length; i ++) {
-      var passActual = '';
-      alphabetSoup[i] = Math.floor(Math.random() * passwordLength);
-      passActual = alphabetSoup [i];
-      return passActual;
-    };
+    var passActual = '';
+    for (var i = 0; i < passwordLength ; i++){
+      var randomized = Math.floor(Math.random() * alphabetSoup.length);
+      console.log(alphabetSoup[i]);
+      passActual = passActual + alphabetSoup[randomized];
+      }
+    return passActual;
   };
 
 }
