@@ -1,7 +1,6 @@
 # secure-password-generator
-
-
-https://dev.to/code_mystery/random-password-generator-using-javascript-6a
+site link: https://sdoval27.github.io/secure-password-generator/
+repo link: https://github.com/sdoval27/secure-password-generator
 
 ## Description
 
@@ -19,6 +18,10 @@ The links in the top right corner of the navigation (excluding the #resume) dire
 ## Installation
 
 N/A
+
+## References
+
+https://dev.to/code_mystery/random-password-generator-using-javascript-6a
  
 ## Usage
 When opening the page, the website should appear as so:
