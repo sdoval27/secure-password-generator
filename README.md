@@ -6,14 +6,21 @@ repo link: https://github.com/sdoval27/secure-password-generator
 
 - This site is secure password generator that allows users to randomly generate a password to meet specific criteria. This criteria includes uppercase letters, lowercase letters, numbers, special characters, and password character length.
 
-### Navigation Links:
-The links in the top right corner of the navigation (excluding the #resume) direct users to the corresponding section of the page. There are also external links in the 'contact me' section that lead to my github and linkedin profiles.
 
-### Images:
-- I have included a recent Bio image of myself, as well as placeholder images for future projects. If a user hovers over these placeholder images, the images grow bigger. The placeholder images also have a link that direct the user to an external page with only that image.
+### Prompts:
+![Password Prompt](assets/images/password_prompt.png)
 
-### Media Queries:
-- when the viewport becomes smaller, the sidebar has been programmed to disappear, and the two columns of images become one column.
+- When the generate password button is selected, this begins a series of window prompt questions in which the user can select the password's length, and what character types they wish to include. 
+
+- If the user inputs a password length that is too short (less than 8 characters) or too long (over 128 characters) the password generator will prompt the user to try again. The same can be said in the instance where the user refuses to select a character type.
+
+![Error Message](assets/images/password_too_long.png)
+
+
+### Validation:
+- When the user inuts the desired criteria, the password generator will produce a password that includes the desired length and character types. This password is generated within the text box of the page.
+
+![Pass Products](assets/images/generated-pass.png)
 
 ## Installation
 
@@ -22,10 +29,11 @@ N/A
 ## References
 
 https://dev.to/code_mystery/random-password-generator-using-javascript-6a
+https://youtu.be/duNmhKgtcsI
  
 ## Usage
 When opening the page, the website should appear as so:
-![portfolio screenshot](assets/images/portfolio%20website%20screenshot.png)
+![password site](assets/images/password_gen_plain.png)
  
 ## License
  
